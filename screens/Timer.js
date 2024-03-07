@@ -21,7 +21,7 @@ export default function Timer(props) {
 return (
   <View style={styles.container}>
     <View style={styles.clock}>
-      <Text style={styles.digits}>{formatNumeric(Math.floor(centisecs / 6000))}:{formatNumeric(Math.floor((centisecs % 6000) / 100))}.{formatNumeric(centisecs % 100)}</Text>
+      <Text style={styles.digits}>{formatNumeric(Math.floor(centisecs / 360000))}:{formatNumeric(Math.floor((centisecs % 360000) / 6000))}:{formatNumeric(Math.floor((centisecs % 6000) / 100))}</Text>
     </View>
     <View style={styles.buttonContainer}>
       <Button title={isCounting ? "Stop" : "Start"} style={{backgroundColor: isCounting ? "#ed3b53" : "#60bd31"}} onPress={() => (setStartStop(!isCounting))} />
